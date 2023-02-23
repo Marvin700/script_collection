@@ -1,0 +1,7 @@
+#Store Username and Password
+Get-Credential | Export-CliXml  -Path Credential.xml
+#Use This Credential Path
+$credential = Import-CliXml -Path  Credential.xml
+#Use Username and Password
+$credential.GetNetworkCredential().Username
+$credential.GetNetworkCredential().Password
